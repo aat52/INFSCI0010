@@ -1,0 +1,74 @@
+<!-- Write an HTML file that has Javascript code in it. The filename will be called button.html
+The JS code can be in the <head> section or the <body> section. The JS code and HTML code will do the following:
+1) Create an HTML button that will trigger the execution of a function named doMath.
+2) The doMath function will prompt the user for three numbers and will determine which number is the smallest. 
+3) The function will print out to the user via an alert of the smallest number.
+ -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Button </title>
+		
+        <!--javascript in head-->
+		<script type="text/javascript">
+		
+        // call function
+		function doMath(){
+            
+		// initializes variables
+		var a = Number(0.0);
+		var b = Number(0.0);
+        var c = Number(0.0);
+            
+		//prompt for a
+		a = prompt("Enter a number for A!");
+		
+		//prompt for b
+		b = prompt("Enter a number for B!");
+            
+        //prompt for c
+		c = prompt("Enter a number for C!");
+	
+        //if statement to find smallest number and alert 
+            var lowest = a
+            if (Number(b) < Number(lowest)) 
+                lowest = b;
+            if (Number(c) < Number(lowest))
+                lowest = c;
+            alert("The smallest number is: "+ lowest);
+            
+            //alternatively, 
+                //if (a<b && a<c)
+                //  alert("The smallest number is: "+ a);
+                //else if (b<a && b<c)
+                //  alert("The smallest number is: "+ b);
+                //else if (c<a && c<b)
+                //  alert("The smallest number is: "+ c);
+        }
+	
+        </script>
+	</head>
+
+<body>
+	<h1> Button </h1>
+    
+    <!--display assignment-->
+    <p style = "font-size:20px"><u>Assignment</u></p>
+    <p> 
+         Write an HTML file that has Javascript code in it. The filename will be called button.html
+        <p>The JS code and HTML code will do the following:</p>
+        <ol>
+            <li>Create an HTML button that will trigger the execution of a function named doMath</li>
+            <li>The doMath function will prompt the user for three numbers and will determine which number is the smallest.</li>
+            <li>The function will print out to the user via an alert of the smallest number.</li>
+        </ol>
+    </p>
+	
+	<hr length = 100% />
+    
+    <!--the actual button-->
+	<p>
+		<input type="button" onclick="doMath()" value="Click here to run doMath" />
+	</p>
+</body>
+</html>

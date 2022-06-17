@@ -1,0 +1,109 @@
+<!--Write an HTML file that has Javascript code in it. The filename will be called score.html
+The JS code can be in the <head> section or the <body> section. The JS code and HTML code will do the following:
+Create a button that will call a function that creates an array with the following scores on a test. S1 = 60, S2 = 70, S3 = 99, S4 = 82, S5 = 77, S6 = 100, S7 = 75, S8 = 88, S9 = 100, S10 = 75.
+Next, run another function (via a calling statement in the code) that will use a for loop to read the scores and categorize them as follows: A = 90 – 100, B = 80-89, C = 70 – 79, D = 60 -69 and F <60.
+Alternative: If you want you can do it all in one function.
+Print out the following message: There are x A’s, x B’s, x C’s , x D’s and x F’s. Obviously, the x stands for a variable representing the actual number. 
+Also, print out the average score with a statement that says the average score of the tests is: x.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+		<title> Score </title>
+        
+        <!--javascript time-->
+        <script type = "text/Javascript">
+        
+        //call function reads array and categorizes scores
+        function scores(){
+        
+        //declare variables and set to 0
+        var grades = [60, 70, 99, 82, 77, 100, 75, 88, 100, 75];
+        var aGrade = 0;
+        var bGrade = 0;
+        var cGrade = 0;
+        var dGrade = 0;
+        var fGrade = 0;
+    
+      //use if statements to determine grade based on entered score
+      for (var i = 0; i <=9; i++){
+        if (grades[i] >=90 && grades[i]<=100) {
+          aGrade = aGrade + 1;
+         
+        } 
+    
+        if (grades[i] >=80 && grades[i]<=89) {
+          bGrade = bGrade + 1;
+        
+        } 
+    
+        if (grades[i] >=70 && grades[i]<=79) {
+          cGrade = cGrade + 1;
+        
+        } 
+    
+        if (grades[i] >=60 && grades[i]<=69) {
+          dGrade = dGrade + 1;
+          
+        } 
+    
+        if (grades[i] >=0 && grades[i]<=59) {
+          fGrade = fGrade + 1;
+      
+        } 
+    
+      }
+    
+      //print number of scores
+        document.write ( "There are  " + aGrade + " A grades" +"<br />");
+        document.write ( "There are  " + bGrade + " B grades" +"<br />");
+        document.write ( "There are  " + cGrade + " C grades" +"<br />");
+        document.write ( "There are  " + dGrade + " D grades" +"<br />");
+        document.write ( "There are  " + fGrade + " F grades" +"<br />");
+
+      //for loop to calculate average score
+      var totalScore = 0;
+      for (var j = 0; j <=9; j++){
+          totalScore = totalScore + grades[j];
+      }
+
+     //calculate average score
+     var averageScore = (totalScore/10);
+            
+     //set the number of decimals to 2 places
+     var n = averageScore.toFixed(2);
+     document.write ("The average score of the tests is " + n);
+    
+    }
+  
+  </script>
+</head>
+
+<body>
+	<h1> Score </h1>
+     <!--HTML SYMBOL CODES &equals; &minus; &rsquo;-->
+    <!--display assignment-->
+    <p style = "font-size:20px"><u>Assignment</u></p>
+    <p> 
+        Write an HTML file that has Javascript code in it. The filename will be called score.html
+        <p>The JS code and HTML code will do the following:</p>
+        <ol>
+            <li>Create a button that will call a function that creates an array with the following scores on a test. S1 = 60, S2 = 70, S3 = 99, S4 = 82, S5 = 77, S6 = 100, S7 = 75, S8 = 88, S9 = 100, S10 = 75.</li>
+            <li>Next, run another function (via a calling statement in the code) that will use a for loop to read the scores and categorize them as follows: A = 90 - 100, B = 80 - 89, C = 70 - 79, D = 60 - 69 and F less than 60.</li>
+                <ul>Alternative: If you want you can do it all in one function.</ul>
+            <li> Print out the following message: There are x A's, x B's, x C's , x D's and x F's. Obviously, the x stands for a variable representing the actual number. Also, print out the average score with a statement that says the average score of the tests is: x.</li>
+        </ol>
+	</p>
+	
+	<hr length = 100% />
+    
+    <!--the actual button-->
+	<p>
+        <button type = "button" onclick = "scores()"> Scores</button>
+    </p>
+    
+</body>
+</html>
+
+
